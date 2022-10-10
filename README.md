@@ -1,4 +1,58 @@
-# Data Project README file
+# Scala & Spark
+
+### :cloud: Cloud Introduction
+
+HDFS (Hadoop Distributed File System) uses blocks of data with a default size of 128 MB. Each block is replicated 3 times across all nodes to make the system fault tolerant. If one node failed, you would still have the data somewhere else.
+
+MapReduce is the way HDFS uses to split a task into multiple distributed set of files.
+We have a job tracker and multiple task trackers. The Job Tracker sends code to run on the Task Tracker while Task Trackers allocate CPU and memory resources for the task to be completed. Task Trackers monitor the task on the worker nodes.
+
+In short, HDFS is used to distribute large data sets while MapReduce distributes computational task.
+
+### :: Apache Spark Introduction
+
+Apache Spark is a better alternative to MapReduce. Released in 2013, it is 100x faster than MapReduce and is able to process data stored in a variety of formats such as Cassandra, AWS S3, HDFS, etc (MapReduce can handle HDFS only). 
+
+Spark is written in Scala.
+
+Spark achieves this speed increase by keeping transaformed data in memory as much as possible, it will dump data into disk only when memmory is filled. On the other hand, MapReduce writes data to disk after each map and reduce operation.
+
+Data is stored in RDD (Resilient Distributed Dataset). We will have master node that orchestrates how the system works and slave nodes that process the data following master nodes' instructions.
+
+RDDs are immutable, lazily evaluated and cacheable. There are two types of RDD operations: 
+- Transformations (the instruction to perform)
+- Actions (carrying out the instruction and returning something back)
+The reason behind this split is because since you will be working with huge amounts of data you only want to perform the action when the function is called. Firstly it creates the recipe and then processes whatever was written on it.
+
+### :: Scala Introduction
+
+Scala is a general purpose language designed in the early 2000s by Matrin Odersky. It was designed to overcome criticism of Java's shortcomings. 
+Scala code runs on a Java Virtual Machine, Java libraries can be used by Scala.
+
+[Scala and Spark installation instructions](https://medium.com/free-code-camp/installing-scala-and-apache-spark-on-mac-os-837ae57d283f#.hv79xf5ri)
+
+Once you have everything installed, run spark by typing `spark-shell` or `scala` to run scala. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 The README file describes the essence of the project playing the most important role. Most visitors will simply scroll down about twice on the README and leave if they are not interested. So, the README file should provide the reason **why** to checkout your project!!!). 
 Bearing that in mind, your job is to: 

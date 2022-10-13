@@ -1,5 +1,17 @@
 # Scala & Spark
 
+### :: Useful Resources
+**Udemy**
+
+[Scala and Spark - Jose Portilla](https://www.udemy.com/course/scala-and-spark-for-big-data-and-machine-learning/)
+
+[Scala Essentials - Rock the JVM](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/)
+
+
+**Books**
+[Scala CookBook - Alvin Alexander](https://alvinalexander.com/scala/scala-recursion-examples-recursive-programming/)
+
+
 ### :cloud: Cloud Introduction
 
 HDFS (Hadoop Distributed File System) uses blocks of data with a default size of 128 MB. Each block is replicated 3 times across all nodes to make the system fault tolerant. If one node failed, you would still have the data somewhere else.
@@ -9,7 +21,7 @@ We have a job tracker and multiple task trackers. The Job Tracker sends code to 
 
 In short, HDFS is used to distribute large data sets while MapReduce distributes computational task.
 
-### :: Apache Spark Introduction
+### :boom: Apache Spark Introduction
 
 Apache Spark is a better alternative to MapReduce. Released in 2013, it is 100x faster than MapReduce and is able to process data stored in a variety of formats such as Cassandra, AWS S3, HDFS, etc (MapReduce can handle HDFS only). 
 
@@ -31,10 +43,28 @@ Scala code runs on a Java Virtual Machine, Java libraries can be used by Scala.
 
 [Scala and Spark installation instructions](https://medium.com/free-code-camp/installing-scala-and-apache-spark-on-mac-os-837ae57d283f#.hv79xf5ri)
 
+[Understanding Scala for beginners](https://twitter.github.io/effectivescala/#Introduction) 
+
 Once you have everything installed, run spark by typing `spark-shell` or `scala` to run scala. 
  
+**Useful Commands**
+- :q Quit Scala
+- :load Loads and runs scala file on the fly
 
+**Compile and Run**
+Compile and run scala files by executing the compiler and then the file itself. Keep in mind that scala files should have a specific structure, a file with a single println() line will raise an error.
 
+The file should have at least one main function:
+```
+object test{
+
+    def main(args: Array[String]): Unit = {
+      println("Hello from the terminal")
+    }
+}
+```
+
+Then compile the file using the `scalac` command. This action will create 3 more files where the scala file lies. Lastly, run the `scala` command to execute the already compiled file.
 
 
 
